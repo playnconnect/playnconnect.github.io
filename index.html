@@ -31,11 +31,25 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <title>play_n_connect_admin_panel</title>
   <link rel="manifest" href="manifest.json">
-  <script>window.flutterWebRenderer = "html";</script>
 
 </head>
 
 <body>
+
+  <script>
+    { { flutter_js } }
+    { { flutter_build_config } }
+
+    // TODO: Replace this with your own code to determine which renderer to use.
+    const useCanvasKit = true;
+
+    const config = {
+      renderer: useCanvasKit ? "canvaskit" : "skwasm",
+    };
+    _flutter.loader.load({
+      config: config,
+    });
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 
