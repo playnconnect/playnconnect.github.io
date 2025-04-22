@@ -31,8 +31,23 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <title>play_n_connect_admin_panel</title>
   <link rel="manifest" href="manifest.json">
-  <script>window.flutterWebRenderer = "html";</script>
-
+<script>
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  if (isSafari) {
+    const webGLWarning = document.createElement('div');
+    webGLWarning.textContent = 'Please enable "Allow WebGL in Web Workers" in Safari (Develop > Experimental Features > Allow WebGL in Web Workers) and refresh the page.';
+    webGLWarning.style.position = 'fixed';
+    webGLWarning.style.top = '0';
+    webGLWarning.style.left = '0';
+    webGLWarning.style.width = '100%';
+    webGLWarning.style.backgroundColor = '#ffcc00';
+    webGLWarning.style.color = '#000';
+    webGLWarning.style.padding = '10px';
+    webGLWarning.style.textAlign = 'center';
+    webGLWarning.style.zIndex = '1000';
+    document.body.appendChild(webGLWarning);
+  }
+</script>
 </head>
 
 <body>
